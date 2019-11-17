@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="MyRemoteConfiguration.Views.PlayerView">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal">
+            <StackLayout VerticalOptions="Center">
+                <ffimageloading:CachedImage HorizontalOptions="Center"
+                                            HeightRequest="100"
+                                            WidthRequest="100"
+                                            DownsampleToViewSize="true"
+                                            Source="{Binding Image}">
+                    <ffimageloading:CachedImage.Transformations>
+                        <fftransformations:CircleTransformation BorderSize="5"
+                                                                BorderHexColor="#DDFFF7" />
+                    </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>
+                <Label Text="{Binding Name}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+            <Grid>
+                <Label Text="Position"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Row="1"
+                       Text="{Binding Position}" />
+                <Label Grid.Column="1"
+                       Text="Nationality"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Column="1"
+                       Grid.Row="1"
+                       Text="{Binding Nationality}" />
+                <Label Grid.Column="2"
+                       Text="Born"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Column="2"
+                       Grid.Row="1"
+                       Text="{Binding Born}" />
+                <Label Grid.Row="3"
+                       Text="Height"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Row="4"
+                       Text="{Binding Height}" />
+                <Label Grid.Row="3"
+                       Grid.Column="1"
+                       Text="Weight"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Row="4"
+                       Grid.Column="1"
+                       Text="{Binding Weight}" />
+                <Label Grid.Row="3"
+                       Grid.Column="2"
+                       Text="Games played"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Row="4"
+                       Grid.Column="2"
+                       Text="{Binding GamesPlayed}" />
+                <Label Grid.Row="6"
+                       Text="Minutes played"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Row="7"
+                       Text="{Binding MinutesPlayed}" />
+                <Label Grid.Row="6"
+                       Grid.Column="1"
+                       Text="Starts"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Row="7"
+                       Grid.Column="1"
+                       Text="{Binding Starts}" />
+                <Label Grid.Row="6"
+                       Grid.Column="2"
+                       Text="Sub off"
+                       FontSize="Small"
+                       TextColor="Silver" />
+                <Label Grid.Row="7"
+                       Grid.Column="2"
+                       Text="{Binding SubOff}" />
+            </Grid>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

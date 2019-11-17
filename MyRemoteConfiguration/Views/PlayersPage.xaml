@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:views="clr-namespace:MyRemoteConfiguration.Views"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="MyRemoteConfiguration.PlayersPage">
+    <ContentPage.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="#B1F8F2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Grid Margin="0,10,0,0"
+              BackgroundColor="{Binding BackgroundColor}">
+            <ffimageloadingsvg:SvgCachedImage WidthRequest="50"
+                                              HeightRequest="50"
+                                              Source="resource://MyRemoteConfiguration.Resources.Images.calendar.svg" />
+            <Label Grid.Row="1"
+                   HorizontalOptions="Center">17/12/2019</Label>
+            <ffimageloadingsvg:SvgCachedImage Grid.Column="1"
+                                              WidthRequest="50"
+                                              HeightRequest="50"
+                                              Source="resource://MyRemoteConfiguration.Resources.Images.stadium.svg" />
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   HorizontalOptions="Center">Metropolitano</Label>
+            <ffimageloadingsvg:SvgCachedImage Grid.Column="2"
+                                              WidthRequest="50"
+                                              HeightRequest="50"
+                                              Source="resource://MyRemoteConfiguration.Resources.Images.medal.svg" />
+            <Label Grid.Row="1"
+                   Grid.Column="2"
+                   HorizontalOptions="Center">La Liga</Label>
+        </Grid>
+        <RefreshView IsRefreshing="{Binding IsBusy}"
+                     Command="{Binding RefreshCommand}">
+            <ScrollView>
+                <CollectionView ItemsSource="{Binding Players}"
+                                SelectionMode="Single"
+                                SelectedItem="{Binding SelectedPlayer}"
+                                SelectionChangedCommand="{Binding NavigateToPlayerCommand}"
+                                Margin="5,10">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                           ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="Transparent"
+                                         Padding="0"
+                                         Margin="0"
+                                         Spacing="0">
+                                <pancake:PancakeView Padding="5"
+                                                     BackgroundColor="#B1F8F2"
+                                                     CornerRadius="20"
+                                                     HeightRequest="175">
+                                    <views:PlayerView />
+                                </pancake:PancakeView>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </RefreshView>
+    </StackLayout>
+
+</ContentPage>

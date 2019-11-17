@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                 xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+                 x:Class="MyRemoteConfiguration.Views.PlayerPopupPage">
+    <!--You can set an animation in the xaml file or in the csharp code behind-->
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="0"
+                                   ScaleOut="0.8"
+                                   DurationIn="300"
+                                   DurationOut="300"
+                                   EasingIn="CubicIn"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="False" />
+    </pages:PopupPage.Animation>
+    <Frame HasShadow="False"
+           CornerRadius="10"
+           BackgroundColor="#B1F8F2"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           Margin="30">
+        <StackLayout>
+            <StackLayout Orientation="Vertical">
+                <StackLayout VerticalOptions="Center">
+                    <ffimageloading:CachedImage HorizontalOptions="Center"
+                                                HeightRequest="200"
+                                                WidthRequest="200"
+                                                DownsampleToViewSize="true"
+                                                Source="{Binding Image}">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation BorderSize="5"
+                                                                    BorderHexColor="#DDFFF7" />
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    <Label Text="{Binding Name}"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+                <Grid>
+                    <Label Text="Position"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Row="1"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding Position}" />
+                    <Label Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                           Text="Nationality"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Column="1"
+                           Grid.Row="1"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding Nationality}" />
+                    <Label Grid.Column="2"
+                           HorizontalTextAlignment="Center"
+                           Text="Born"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Column="2"
+                           Grid.Row="1"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding Born}" />
+                    <Label Grid.Row="3"
+                           HorizontalTextAlignment="Center"
+                           Text="Height"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Row="4"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding Height}" />
+                    <Label Grid.Row="3"
+                           Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                           Text="Weight"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Row="4"
+                           Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding Weight}" />
+                    <Label Grid.Row="3"
+                           Grid.Column="2"
+                           HorizontalTextAlignment="Center"
+                           Text="Games played"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Row="4"
+                           Grid.Column="2"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding GamesPlayed}" />
+                    <Label Grid.Row="6"
+                           HorizontalTextAlignment="Center"
+                           Text="Minutes played"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Row="7"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding MinutesPlayed}" />
+                    <Label Grid.Row="6"
+                           Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                           Text="Starts"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Row="7"
+                           Grid.Column="1"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding Starts}" />
+                    <Label Grid.Row="6"
+                           Grid.Column="2"
+                           HorizontalTextAlignment="Center"
+                           Text="Sub off"
+                           FontSize="Small"
+                           TextColor="Silver" />
+                    <Label Grid.Row="7"
+                           Grid.Column="2"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding SubOff}" />
+                </Grid>
+
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+
+</pages:PopupPage>

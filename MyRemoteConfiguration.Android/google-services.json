@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "840892219043",
+    "firebase_url": "https://myremoteconfiguration.firebaseio.com",
+    "project_id": "myremoteconfiguration",
+    "storage_bucket": "myremoteconfiguration.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840892219043:android:6388a8227bbd8f608a8916",
+        "android_client_info": {
+          "package_name": "com.mookiefumi.myremoteconfiguration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840892219043-sdflh106codg1av1kde6mckercodbmke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBylb27YSM9zS_OBz3xlRZOM3mGKwsxGu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840892219043-sdflh106codg1av1kde6mckercodbmke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
